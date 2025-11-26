@@ -13,7 +13,7 @@ public class WelcompageController {
 
     @FXML
     void btnStart(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SecurityPage.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
