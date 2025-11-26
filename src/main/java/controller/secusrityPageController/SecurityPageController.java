@@ -13,7 +13,7 @@ public class SecurityPageController {
 
     @FXML
     void btnLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginPage"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginPage.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

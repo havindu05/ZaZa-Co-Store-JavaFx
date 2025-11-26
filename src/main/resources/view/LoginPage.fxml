@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.loginPageController.LoginPageController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginPageController.LoginPageController">
+   <children>
+      <ImageView fitHeight="530.0" fitWidth="882.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Clothify%20Store%20offers%20the%20latest%20fashion%20for%20all%20ages,%20combining%20quality,%20style,%20and%20affordability.%20From%20everyday%20wear%20to%20special%20occasions,%20we%20make%20shopping%20easy,%20enjoyable,%20and%20memorable..png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtName" layoutX="496.0" layoutY="194.0" prefHeight="34.0" prefWidth="354.0" promptText="Name" />
+      <TextField fx:id="txtMail" layoutX="496.0" layoutY="267.0" prefHeight="34.0" prefWidth="354.0" promptText="eMail" />
+      <TextField fx:id="txtPassword" layoutX="496.0" layoutY="340.0" prefHeight="34.0" prefWidth="354.0" promptText="Password" />
+      <Text fill="WHITE" layoutX="605.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Here">
+         <font>
+            <Font name="Big Caslon Medium" size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="496.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font name="Avenir Next Condensed Medium" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="497.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eMail">
+         <font>
+            <Font name="Avenir Next Condensed Medium" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="496.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Avenir Next Condensed Medium" size="21.0" />
+         </font>
+      </Text>
+      <Button layoutX="492.0" layoutY="397.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="34.0" prefWidth="354.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: white; -fx-border-radius: 50;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Canela Text Regular" size="18.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

@@ -1,8 +1,7 @@
 package service;
 
-import repository.UserRepository;
+import model.dto.UserDTO;
 
-public class UserService {
-
-
+public interface UserService {
+    UserDTO login(String email,String password);
 }
