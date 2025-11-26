@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="487.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.welcomepageController.WelcompageController">
+   <children>
+      <ImageView fitHeight="530.0" fitWidth="882.0" layoutX="-2.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Clothify%20Store%20offers%20the%20latest%20fashion%20for%20all%20ages,%20combining%20quality,%20style,%20and%20affordability.%20From%20everyday%20wear%20to%20special%20occasions,%20we%20make%20shopping%20easy,%20enjoyable,%20and%20memorable..png" />
+         </image>
+      </ImageView>
+      <Button layoutX="489.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="56.0" prefWidth="345.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: white; -fx-border-radius: 50;" text="Start" textFill="WHITE">
+         <font>
+            <Font name="Canela Text Regular" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
