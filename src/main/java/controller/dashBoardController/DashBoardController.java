@@ -2,8 +2,19 @@ package controller.dashBoardController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class DashBoardController {
+
+    @FXML
+    private PieChart userChart;
 
     @FXML
     void btnCustomer(ActionEvent event) {
@@ -31,8 +42,12 @@ public class DashBoardController {
     }
 
     @FXML
-    void btnPlaceOrder(ActionEvent event) {
-
+    void btnPlaceOrder(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrder.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -47,6 +62,11 @@ public class DashBoardController {
 
     @FXML
     void btnSupplier(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnUserChart(MouseEvent event) {
 
     }
 

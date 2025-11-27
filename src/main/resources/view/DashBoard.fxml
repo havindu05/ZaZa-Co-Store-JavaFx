@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="768.0" prefWidth="1088.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashBoardController.DashBoardController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="753.0" layoutX="8.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="321.0" />

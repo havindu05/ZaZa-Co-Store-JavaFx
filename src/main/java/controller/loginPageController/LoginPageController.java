@@ -31,8 +31,12 @@ public class LoginPageController {
     }
 
     @FXML
-    void btnLogin(ActionEvent event) {
-
+    void btnLogin(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashBoard.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
