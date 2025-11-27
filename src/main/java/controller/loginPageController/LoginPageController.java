@@ -2,11 +2,13 @@ package controller.loginPageController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import model.dto.UserDTO;
-import service.UserService;
-import service.UserController;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LoginPageController {
 
@@ -14,43 +16,23 @@ public class LoginPageController {
     private TextField txtMail;
 
     @FXML
-    private TextField txtName;
+    private TextField txtMail1;
 
     @FXML
     private TextField txtPassword;
 
-    UserService userService = new UserController();
+    @FXML
+    void btnBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SecurityPage.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void btnLogin(ActionEvent event) {
 
-        String email = txtMail.getText().trim();
-        String name = txtName.getText().trim();
-        String password = txtPassword.getText().trim();
-
-        if(email.isEmpty() || password.isEmpty() || name.isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Please fill all fields!");
-            return;
-        }
-
-        UserDTO user = userService.login(email, password);
-
-        if(user != null) {
-            if(user.getName().equals(name)) {
-                showAlert(Alert.AlertType.INFORMATION, "Login Successful! Welcome " + user.getName());
-            } else {
-                showAlert(Alert.AlertType.ERROR, "Name does not match your account!");
-            }
-        } else {
-            showAlert(Alert.AlertType.ERROR, "Invalid email or password. Please try again.");
-        }
     }
 
-    private void showAlert(Alert.AlertType alertType, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle("Login Message");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.show();
-    }
 }

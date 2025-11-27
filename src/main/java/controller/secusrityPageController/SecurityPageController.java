@@ -12,8 +12,8 @@ import java.io.IOException;
 public class SecurityPageController {
 
     @FXML
-    void btnLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginPage.fxml"));
+    void btnSignUp(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SignUp.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -21,8 +21,8 @@ public class SecurityPageController {
     }
 
     @FXML
-    void btnSignUp(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SignUp.fxml"));
+    void btnLogin(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginForm.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
