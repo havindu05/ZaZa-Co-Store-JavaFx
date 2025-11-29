@@ -13,9 +13,9 @@ public class CustomerFormController {
     @FXML private ComboBox<String> cmbTitle;
     @FXML private TextField txtName;
     @FXML private TextField txtAddress;
-    @FXML private Button btnSave;
+    @FXML private Button btnBuyNow;
 
-    private CustomerService customerService = new CustomerController(); // service layer
+    private CustomerService customerService = new CustomerController();
 
     @FXML
     public void initialize() {
@@ -23,7 +23,7 @@ public class CustomerFormController {
     }
 
     @FXML
-    void btnSaveAction() {
+    void btnBuyNow() {
         String phone = txtPhone.getText().trim();
 
         if(phone.isEmpty()) {
@@ -34,7 +34,6 @@ public class CustomerFormController {
         CustomerDTO existingCustomer = customerService.searchCustomer(phone);
 
         if(existingCustomer != null) {
-            // Customer exists
             new Alert(Alert.AlertType.INFORMATION, "Customer with this phone number already exists!").show();
             txtPhone.clear();
             txtName.clear();
@@ -43,7 +42,6 @@ public class CustomerFormController {
             return;
         }
 
-        // Customer does not exist → save new
         if(cmbTitle.getValue() == null || txtName.getText().trim().isEmpty()) {
             new Alert(Alert.AlertType.WARNING, "Please fill all required fields!").show();
             return;
@@ -60,7 +58,7 @@ public class CustomerFormController {
 
         if(saved) {
             new Alert(Alert.AlertType.INFORMATION, "Customer added successfully!").show();
-            ((Stage) btnSave.getScene().getWindow()).close(); // close popup
+            ((Stage) btnBuyNow.getScene().getWindow()).close();
         } else {
             new Alert(Alert.AlertType.ERROR, "Failed to save customer!").show();
         }

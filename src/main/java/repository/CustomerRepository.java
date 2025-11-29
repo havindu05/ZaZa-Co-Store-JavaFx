@@ -4,6 +4,7 @@ import model.dto.CustomerDTO;
 import java.util.List;
 
 public interface CustomerRepository {
+
     CustomerDTO findByPhone(String phone);
 
     boolean saveCustomer(CustomerDTO customerDTO);
@@ -13,5 +14,5 @@ public interface CustomerRepository {
     boolean deleteCustomer(String phone);
 
     List<CustomerDTO> getAllCustomers();
-    
+
 }
