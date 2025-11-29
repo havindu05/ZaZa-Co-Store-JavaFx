@@ -174,7 +174,7 @@
                   <Image url="@../images/Clothing%20boutique,%20cute%20clothes,%20fashion%20inspo…%20Background%20Removed.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="300.0" fitWidth="183.0" layoutX="350.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="280.0" fitWidth="147.0" layoutX="358.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/%20-8%20Background%20Removed.png" />
                </image>

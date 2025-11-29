@@ -13,6 +13,9 @@ public class CustomerFormController {
     @FXML private ComboBox<String> cmbTitle;
     @FXML private TextField txtName;
     @FXML private TextField txtAddress;
+    @FXML private TextField txtPrice;
+    @FXML private Spinner<Integer> spnQty;
+    @FXML private TextField txtTotal;
     @FXML private Button btnBuyNow;
 
     private CustomerService customerService = new CustomerController();
@@ -20,6 +23,20 @@ public class CustomerFormController {
     @FXML
     public void initialize() {
         cmbTitle.getItems().addAll("Mr", "Ms", "Miss");
+
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
+        spnQty.setValueFactory(valueFactory);
+
+        spnQty.valueProperty().addListener((obs, oldValue, newValue) -> calculateTotal());
+        txtPrice.textProperty().addListener((obs, oldValue, newValue) -> calculateTotal());
+    }
+
+    private void calculateTotal() {
+        try {
+            double price = Double.parseDouble(txtPrice.getText().trim());
+            int qty = spnQty.getValue();
+            txtTotal.setText(String.valueOf(price * qty));
+        } catch (Exception ignored) {}
     }
 
     @FXML
@@ -34,11 +51,8 @@ public class CustomerFormController {
         CustomerDTO existingCustomer = customerService.searchCustomer(phone);
 
         if(existingCustomer != null) {
-            new Alert(Alert.AlertType.INFORMATION, "Customer with this phone number already exists!").show();
-            txtPhone.clear();
-            txtName.clear();
-            txtAddress.clear();
-            cmbTitle.setValue(null);
+            new Alert(Alert.AlertType.INFORMATION, "Customer already exists!").show();
+            clearFields();
             return;
         }
 
@@ -62,5 +76,15 @@ public class CustomerFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "Failed to save customer!").show();
         }
+    }
+
+    private void clearFields() {
+        txtPhone.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtPrice.clear();
+        txtTotal.clear();
+        cmbTitle.setValue(null);
+        spnQty.getValueFactory().setValue(1);
     }
 }
