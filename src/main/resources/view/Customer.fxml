@@ -30,7 +30,7 @@
                 <Font name="Cochin" size="18.0" />
             </font>
         </Text>
-        <TextField fx:id="txtPhone" layoutX="114.0" layoutY="106.0" prefHeight="26.0" prefWidth="283.0" style="-fx-background-color: BLACK; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: WHITE;" />
+        <TextField fx:id="txtPhone" layoutX="114.0" layoutY="106.0" prefHeight="26.0" prefWidth="283.0" style="-fx-background-color: BLACK; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: WHITE;" styleClass="-fx-text-fill: white" />
         <Text fill="WHITE" layoutX="7.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title           :">
             <font>
                 <Font name="Cochin" size="18.0" />
