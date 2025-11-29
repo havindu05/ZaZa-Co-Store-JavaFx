@@ -14,7 +14,7 @@ import service.UserController;
 
 import java.io.IOException;
 
-public class SignUpController {
+public class SignUpFormController {
 
     @FXML
     private TextField txtName;

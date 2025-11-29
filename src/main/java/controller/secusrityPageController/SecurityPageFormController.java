@@ -1,29 +1,19 @@
-package controller.loginPageController;
+package controller.secusrityPageController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginPageController {
+public class SecurityPageFormController {
 
     @FXML
-    private TextField txtMail;
-
-    @FXML
-    private TextField txtMail1;
-
-    @FXML
-    private TextField txtPassword;
-
-    @FXML
-    void btnBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SecurityPage.fxml"));
+    void btnSignUp(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SignUp.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -32,7 +22,7 @@ public class LoginPageController {
 
     @FXML
     void btnLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashBoard.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginForm.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

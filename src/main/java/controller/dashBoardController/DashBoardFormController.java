@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashBoardController {
+public class DashBoardFormController {
 
     @FXML
     private PieChart userChart;

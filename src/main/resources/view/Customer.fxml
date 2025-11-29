@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.customerController.CustomerFormController">
+
+    <HBox spacing="10">
+        <Label text="Phone:"/>
+        <TextField fx:id="txtPhone"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Title:"/>
+        <ComboBox fx:id="cmbTitle"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Name:"/>
+        <TextField fx:id="txtName"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Address:"/>
+        <TextField fx:id="txtAddress"/>
+    </HBox>
+
+    <Button fx:id="btnSave" text="Save Customer" onAction="#btnSaveAction"/>
+</VBox>

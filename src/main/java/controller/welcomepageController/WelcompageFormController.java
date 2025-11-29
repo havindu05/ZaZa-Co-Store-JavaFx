@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WelcompageController {
+public class WelcompageFormController {
 
     @FXML
     void btnStart(ActionEvent event) throws IOException {
