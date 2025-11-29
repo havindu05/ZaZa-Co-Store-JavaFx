@@ -16,6 +16,7 @@
    <children>
       <AnchorPane layoutX="-6.0" prefHeight="768.0" prefWidth="1088.0" style="-fx-background-color: BLACK;">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutX="345.0" layoutY="69.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="134.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="755.0" layoutX="10.0" layoutY="8.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-width: 50; -fx-arc-height: 50;" width="316.0" />
             <Text fill="WHITE" layoutX="29.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZaZa Co." textAlignment="CENTER" wrappingWidth="289.39564514160156">
                <font>
@@ -73,7 +74,7 @@
                </font>
             </Text>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="45.0" layoutX="334.0" layoutY="14.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" style="-fx-arc-width: 50; -fx-arc-height: 50;" width="745.0" />
-            <Button layoutX="354.0" layoutY="76.0" mnemonicParsing="false" onAction="#btnFrocks" prefHeight="35.0" prefWidth="117.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Frocks" textFill="WHITE">
+            <Button layoutX="353.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnFrocks" prefHeight="37.0" prefWidth="119.0" style="-fx-background-radius: 50; -fx-background-color: WHITE; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Frocks">
                <font>
                   <Font name="Canela Text Regular" size="14.0" />
                </font>
@@ -144,7 +145,7 @@
                   <Font name="Apple Chancery" size="19.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="397.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 2700" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+            <Text fill="WHITE" layoutX="397.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 5500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                <font>
                   <Font size="14.0" />
                </font>
@@ -163,6 +164,131 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="875.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="300.0" layoutX="870.0" layoutY="452.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="205.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="874.0" layoutY="456.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
+            <ImageView fitHeight="202.0" fitWidth="182.0" layoutX="614.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Faithfull%20the%20Brand%20Morissa%20Mini%20Dress%20in%20Plain%20Black%20Background%20Removed.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="221.0" fitWidth="161.0" layoutX="904.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Clothing%20boutique,%20cute%20clothes,%20fashion%20inspo…%20Background%20Removed.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="300.0" fitWidth="183.0" layoutX="350.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/%20-8%20Background%20Removed.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="266.0" fitWidth="215.0" layoutX="606.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/%20-7%20Background%20Removed.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="211.0" fitWidth="134.0" layoutX="903.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/%20-7%20Background%20Removed%202.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="613.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Royal Blossom Frock">
+               <font>
+                  <Font name="Apple Chancery" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="888.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crystal Lace Elegance">
+               <font>
+                  <Font name="Apple Chancery" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="363.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pink Candy Frock" wrappingWidth="155.56012391739955">
+               <font>
+                  <Font name="Apple Chancery" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="595.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sweet Lavender Frock" textAlignment="CENTER" wrappingWidth="203.46661805802455">
+               <font>
+                  <Font name="Apple Chancery" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="870.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiny Angel Dress" textAlignment="CENTER" wrappingWidth="203.46661805802455">
+               <font>
+                  <Font name="Apple Chancery" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="666.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 4500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="939.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 5200" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="660.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6000" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="938.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 5800" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="706.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="630.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="975.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="899.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="439.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="363.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="704.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="628.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="980.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnAddToCart" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="904.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+               <font>
+                  <Font name="Canela Text Regular" size="9.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
