@@ -18,4 +18,6 @@ public class ItemDTO {
 
     private int qty;
 
+    private String image;
+
 }
