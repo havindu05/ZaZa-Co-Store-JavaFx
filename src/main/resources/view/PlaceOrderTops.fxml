@@ -152,7 +152,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="364.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="364.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnRoyalEthnicTops" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
@@ -216,7 +216,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="630.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="630.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnElegantKurti" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
@@ -226,7 +226,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="899.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="899.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnModernFusionKurtis" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
@@ -236,7 +236,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="363.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="363.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnSignatureDesignerTops" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
@@ -246,7 +246,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="628.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="628.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnTrendyEthnicWear" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
@@ -256,7 +256,7 @@
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
                   </Button>
-                  <Button layoutX="904.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                  <Button layoutX="904.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnDivaKurtiEdition" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                      <font>
                         <Font name="Canela Text Regular" size="9.0" />
                      </font>
