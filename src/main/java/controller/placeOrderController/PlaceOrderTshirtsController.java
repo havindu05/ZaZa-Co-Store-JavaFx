@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PlaceOrderPantsController {
+public class PlaceOrderTshirtsController {
 
     @FXML
     void btnAddToCart(ActionEvent event) {
@@ -37,8 +37,12 @@ public class PlaceOrderPantsController {
     }
 
     @FXML
-    void btnFrocks(ActionEvent event) {
-
+    void btnFrocks(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderFrocks.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -53,7 +57,7 @@ public class PlaceOrderPantsController {
 
     @FXML
     void btnPants(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderPants.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderpants.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

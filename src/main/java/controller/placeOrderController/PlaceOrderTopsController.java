@@ -71,8 +71,12 @@ public class PlaceOrderTopsController {
     }
 
     @FXML
-    void btnPants(ActionEvent event) {
-
+    void btnPants(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderPants.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -119,8 +123,12 @@ public class PlaceOrderTopsController {
     }
 
     @FXML
-    void btnTshirts(ActionEvent event) {
-
+    void btnTshirts(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderTshirts.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

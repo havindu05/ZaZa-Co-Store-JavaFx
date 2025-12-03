@@ -92,8 +92,12 @@ public class PlaceOrderFrocksController {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML void btnTshirts(ActionEvent event) {
-
+    @FXML void btnTshirts(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PlaceOrderTshirts.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void btnAddToCart(ActionEvent event) {
