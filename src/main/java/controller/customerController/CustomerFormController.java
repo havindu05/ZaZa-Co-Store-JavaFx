@@ -4,8 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.dto.CustomerDTO;
-import service.CustomerController;
 import service.CustomerService;
+import service.CustomerController; // or CustomerServiceImpl
 
 public class CustomerFormController {
 
@@ -18,7 +18,11 @@ public class CustomerFormController {
     @FXML private TextField txtTotal;
     @FXML private Button btnBuyNow;
 
-    private CustomerService customerService = new CustomerController();
+    private final CustomerService customerService = new CustomerController();
+
+    private double productPrice = 0.0;
+
+    private Runnable onCustomerSaved;
 
     @FXML
     public void initialize() {
@@ -31,51 +35,83 @@ public class CustomerFormController {
         txtPrice.textProperty().addListener((obs, oldValue, newValue) -> calculateTotal());
     }
 
+    public void setProductPrice(double price) {
+        this.productPrice = price;
+        txtPrice.setText(String.format("%.2f", price));
+        calculateTotal();
+    }
+
+    public void setQuantity(int qty) {
+        spnQty.getValueFactory().setValue(qty);
+    }
+
+    public void setOnCustomerSaved(Runnable callback) {
+        this.onCustomerSaved = callback;
+    }
+
     private void calculateTotal() {
         try {
-            double price = Double.parseDouble(txtPrice.getText().trim());
+            double price = txtPrice.getText().trim().isEmpty() ? 0.0 : Double.parseDouble(txtPrice.getText());
             int qty = spnQty.getValue();
-            txtTotal.setText(String.valueOf(price * qty));
-        } catch (Exception ignored) {}
+            txtTotal.setText(String.format("%.2f", price * qty));
+        } catch (NumberFormatException e) {
+            txtTotal.setText("0.00");
+        }
     }
 
     @FXML
     void btnBuyNow() {
         String phone = txtPhone.getText().trim();
 
-        if(phone.isEmpty()) {
-            new Alert(Alert.AlertType.WARNING, "Please enter phone number!").show();
+        if (phone.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Please enter phone number!");
+            return;
+        }
+
+        if (!phone.matches("\\d{10}")) {
+            showAlert(Alert.AlertType.WARNING, "Phone must be 10 digits!");
             return;
         }
 
         CustomerDTO existingCustomer = customerService.searchCustomer(phone);
-
-        if(existingCustomer != null) {
-            new Alert(Alert.AlertType.INFORMATION, "Customer already exists!").show();
-            clearFields();
-            return;
+        if (existingCustomer != null) {
+            showAlert(Alert.AlertType.INFORMATION, "Customer already exists!\nYou can now place the order.");
         }
 
-        if(cmbTitle.getValue() == null || txtName.getText().trim().isEmpty()) {
-            new Alert(Alert.AlertType.WARNING, "Please fill all required fields!").show();
+        if (cmbTitle.getValue() == null || txtName.getText().trim().isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Please fill Title and Name!");
             return;
         }
 
         CustomerDTO newCustomer = new CustomerDTO(
                 phone,
                 cmbTitle.getValue(),
-                txtName.getText(),
-                txtAddress.getText()
+                txtName.getText().trim(),
+                txtAddress.getText().trim()
         );
 
         boolean saved = customerService.saveCustomer(newCustomer);
 
-        if(saved) {
-            new Alert(Alert.AlertType.INFORMATION, "Customer added successfully!").show();
-            ((Stage) btnBuyNow.getScene().getWindow()).close();
+        if (saved || existingCustomer != null) {
+            showAlert(Alert.AlertType.INFORMATION, "Customer ready! Proceeding to order...");
+
+            if (onCustomerSaved != null) {
+                onCustomerSaved.run();
+            }
+
+            Stage stage = (Stage) btnBuyNow.getScene().getWindow();
+            stage.close();
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to save customer!").show();
+            showAlert(Alert.AlertType.ERROR, "Failed to save customer!");
         }
+    }
+
+    private void showAlert(Alert.AlertType type, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle("Clothify Store");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private void clearFields() {

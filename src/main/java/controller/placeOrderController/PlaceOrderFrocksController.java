@@ -1,8 +1,10 @@
 package controller.placeOrderController;
 
+import controller.customerController.CustomerFormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -105,17 +107,21 @@ public class PlaceOrderFrocksController {
     }
 
     public void btnBuyNow(ActionEvent event) {
+        double frockPrice = 3200.00;
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Customer.fxml"));
             Parent root = loader.load();
 
-            Scene scene = new Scene(root);
-
+            CustomerFormController customerController = loader.getController();
+            customerController.setProductPrice(frockPrice);
 
             Stage stage = new Stage();
-            stage.setTitle("Enter Customer Details");
-            stage.setScene(scene);
-            stage.show();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Customer Details - Buy Now");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.showAndWait();
 
         } catch (Exception e) {
             e.printStackTrace();
