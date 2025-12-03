@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.placeOrderController.PlaceOrderSkirtController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
@@ -134,12 +133,12 @@
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="601.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="337.0" layoutY="455.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="601.0" layoutY="455.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
-                        <Text fill="WHITE" layoutX="355.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Royal Ethnic Tops">
+                        <Text fill="WHITE" layoutX="392.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skirt City">
                            <font>
                               <Font name="Apple Chancery" size="19.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="397.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 7500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="397.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 5300" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -158,52 +157,52 @@
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="875.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="300.0" layoutX="870.0" layoutY="452.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="205.0" />
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="874.0" layoutY="456.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
-                        <Text fill="WHITE" layoutX="639.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elegant Kurti">
+                        <Text fill="WHITE" layoutX="641.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flare &amp; Flow">
                            <font>
                               <Font name="Apple Chancery" size="19.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="881.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modern Fusion Kurtis">
+                        <Text fill="WHITE" layoutX="918.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elegant Skirts">
                            <font>
                               <Font name="Apple Chancery" size="19.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="351.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Signature Designer Tops" wrappingWidth="182.991670047389">
+                        <Text fill="WHITE" layoutX="386.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Denim Skirts" wrappingWidth="98.991670047389">
                            <font>
                               <Font name="Apple Chancery" size="17.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="604.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trendy Ethnic Wear" textAlignment="CENTER" wrappingWidth="203.46661805802455">
+                        <Text fill="WHITE" layoutX="604.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flowy Fits" textAlignment="CENTER" wrappingWidth="203.46661805802455">
                            <font>
                               <Font name="Apple Chancery" size="19.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="878.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diva Kurti Edition" textAlignment="CENTER" wrappingWidth="203.46661805802455">
+                        <Text fill="WHITE" layoutX="878.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peachy Skirts" textAlignment="CENTER" wrappingWidth="203.46661805802455">
                            <font>
                               <Font name="Apple Chancery" size="19.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="666.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6000" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="666.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 5000" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="939.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 8200" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="939.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6000" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="397.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 9500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="397.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="672.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 7000" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="661.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6300" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="941.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 6500" textAlignment="CENTER" wrappingWidth="68.42730712890625">
+                        <Text fill="WHITE" layoutX="941.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs 7300" textAlignment="CENTER" wrappingWidth="68.42730712890625">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -258,42 +257,42 @@
                               <Font name="Canela Text Regular" size="9.0" />
                            </font>
                         </Button>
-                        <ImageView fitHeight="221.0" fitWidth="196.0" layoutX="333.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%20-9%20Background%20Removed.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="185.0" fitWidth="149.0" layoutX="644.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%20-7%20Background%20Removed%203.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="196.0" fitWidth="158.0" layoutX="895.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%20-8%20Background%20Removed%202.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="199.0" fitWidth="177.0" layoutX="377.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%20-10%20Background%20Removed.png" />
-                           </image>
-                        </ImageView>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutX="656.0" layoutY="71.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="134.0" />
-                        <ImageView fitHeight="185.0" fitWidth="114.0" layoutX="647.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%20-11%20Background%20Removed.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="205.0" fitWidth="160.0" layoutX="889.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/%23outfitoftheday%20%23outfitideasforwomen%20%23outfits%20%23outfitidea%20%23outfitstyle%20%23outfitpost%20Background%20Removed.png" />
-                           </image>
-                        </ImageView>
                         <Button layoutX="664.0" layoutY="76.0" mnemonicParsing="false" onAction="#btnSkirts" prefHeight="35.0" prefWidth="117.0" style="-fx-background-radius: 50; -fx-background-color: WHITE; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Skirts">
                            <font>
                               <Font name="Canela Text Regular" size="14.0" />
                            </font>
                         </Button>
+                        <ImageView fitHeight="234.0" fitWidth="134.0" layoutX="366.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/%20-7%20Background%20Removed%204.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="185.0" fitWidth="160.0" layoutX="630.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/🌷✨%20Background%20Removed.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="257.0" fitWidth="170.0" layoutX="896.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/%20-9%20Background%20Removed%202.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="237.0" fitWidth="181.0" layoutX="352.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/10%20Chic%20Denim%20Maxi%20Skirt%20Outfit%20Ideas%20to%20Copy!%20Background%20Removed.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="251.0" fitWidth="170.0" layoutX="625.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Chic%20Boho%20Home%20Decor%20Ideas%20Background%20Removed.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="206.0" fitWidth="225.0" layoutX="895.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/💕%20Background%20Removed.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
