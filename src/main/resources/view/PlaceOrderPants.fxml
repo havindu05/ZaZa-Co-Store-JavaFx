@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.placeOrderController.PlaceOrderPantsController">
    <children>
       <AnchorPane layoutX="5.0" prefHeight="400.0" prefWidth="600.0">
@@ -152,7 +151,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="364.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="364.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnPrettyGirlTees" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -161,7 +160,7 @@
                               <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="875.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="300.0" layoutX="870.0" layoutY="452.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="205.0" />
                               <Rectangle arcHeight="5.0" arcWidth="5.0" height="291.0" layoutX="874.0" layoutY="456.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="196.0" />
-                              <Text fill="WHITE" layoutX="629.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daisy Tees">
+                              <Text fill="WHITE" layoutX="650.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daisy Tees">
                                  <font>
                                     <Font name="Apple Chancery" size="19.0" />
                                  </font>
@@ -216,7 +215,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="630.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="630.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnDaisyTees" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -226,7 +225,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="899.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="899.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnGirlStyleTrousers" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -236,7 +235,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="363.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="363.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnGirlFitTrousers" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -246,7 +245,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="628.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="628.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnClassicGirlPants" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -256,7 +255,7 @@
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="904.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnBuyNow" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
+                              <Button layoutX="904.0" layoutY="715.0" mnemonicParsing="false" onAction="#btnSoftCurveTrousers" prefHeight="23.0" prefWidth="71.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Buy Now" textFill="WHITE">
                                  <font>
                                     <Font name="Canela Text Regular" size="9.0" />
                                  </font>
@@ -281,17 +280,17 @@
                                     <Image url="@../images/%20-10%20Background%20Removed%202.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="255.0" fitWidth="200.0" layoutX="351.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="255.0" fitWidth="200.0" layoutX="350.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/Onic%20Kayes%20Background%20Removed.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="281.0" fitWidth="175.0" layoutX="620.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="281.0" fitWidth="175.0" layoutX="619.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/%20-9%20Background%20Removed%203.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="281.0" fitWidth="184.0" layoutX="899.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="281.0" fitWidth="184.0" layoutX="900.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/korean%20outfit%20Background%20Removed.png" />
                                  </image>

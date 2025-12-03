@@ -14,12 +14,30 @@ import java.io.IOException;
 
 public class PlaceOrderTopsController {
 
-    @FXML void btnRoyalEthnicTops(ActionEvent event)        { buyNow("Royal Ethnic Tops", 7500.00); }
-    @FXML void btnElegantKurti(ActionEvent event)           { buyNow("Elegant Kurti", 6000.00); }
-    @FXML void btnModernFusionKurtis(ActionEvent event)     { buyNow("Modern Fusion Kurtis", 8200.00); }
-    @FXML void btnSignatureDesignerTops(ActionEvent event)  { buyNow("Signature Designer Tops", 9500.00); }
-    @FXML void btnTrendyEthnicWear(ActionEvent event)       { buyNow("Trendy Ethnic Wear", 7000.00); }
-    @FXML void btnDivaKurtiEdition(ActionEvent event)       { buyNow("Diva Kurti Edition", 6500.00); }
+    @FXML void btnRoyalEthnicTops(ActionEvent event)        {
+        buyNow("Royal Ethnic Tops", 7500.00);
+    }
+
+    @FXML void btnElegantKurti(ActionEvent event)           {
+        buyNow("Elegant Kurti", 6000.00);
+    }
+
+    @FXML void btnModernFusionKurtis(ActionEvent event) {
+        buyNow("Modern Fusion Kurtis", 8200.00);
+    }
+
+    @FXML void btnSignatureDesignerTops(ActionEvent event)  {
+        buyNow("Signature Designer Tops", 9500.00);
+    }
+
+    @FXML void btnTrendyEthnicWear(ActionEvent event)       {
+        buyNow("Trendy Ethnic Wear", 7000.00);
+    }
+
+    @FXML void btnDivaKurtiEdition(ActionEvent event)       {
+        buyNow("Diva Kurti Edition", 6500.00);
+    }
+
 
     @FXML void btnAddToCart(ActionEvent event) {
         new Alert(Alert.AlertType.INFORMATION, "Item added to cart!").show();
@@ -70,21 +88,65 @@ public class PlaceOrderTopsController {
         stage.show();
     }
 
-    @FXML void btnDashBoard(ActionEvent e) throws IOException { loadScene(e, "/view/DashBoard.fxml"); }
-    @FXML void btnPlaceOrder(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderFrocks.fxml"); }
-    @FXML void btnLogOut(ActionEvent e) throws IOException { loadScene(e, "/view/SecurityPage.fxml"); }
-    @FXML void btnFrocks(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderFrocks.fxml"); }
-    @FXML void btnTops(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderTops.fxml"); }
-    @FXML void btnSkirts(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderSkirts.fxml"); }
-    @FXML void btnPants(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderPants.fxml"); }
-    @FXML void btnTshirts(ActionEvent e) throws IOException { loadScene(e, "/view/PlaceOrderTshirts.fxml"); }
+    @FXML void btnDashBoard(ActionEvent e) throws IOException {
+        loadScene(e, "/view/DashBoard.fxml");
+    }
 
-    @FXML void btnEmployee(ActionEvent e) {}
-    @FXML void btnCustomer(ActionEvent e) {}
-    @FXML void btnProduct(ActionEvent e) {}
-    @FXML void btnReturn(ActionEvent e) {}
-    @FXML void btnSupplier(ActionEvent e) {}
-    @FXML void btnOrders(ActionEvent e) {}
-    @FXML void btnSearch(ActionEvent e) {}
+    @FXML void btnPlaceOrder(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderFrocks.fxml");
+    }
+
+    @FXML void btnLogOut(ActionEvent e) throws IOException {
+        loadScene(e, "/view/SecurityPage.fxml");
+    }
+
+    @FXML void btnFrocks(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderFrocks.fxml");
+    }
+
+    @FXML void btnTops(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderTops.fxml");
+    }
+
+    @FXML void btnSkirts(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderSkirts.fxml");
+    }
+
+    @FXML void btnPants(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderPants.fxml");
+    }
+
+    @FXML void btnTshirts(ActionEvent e) throws IOException {
+        loadScene(e, "/view/PlaceOrderTshirts.fxml");
+    }
+
+
+    @FXML void btnEmployee(ActionEvent e) {
+
+    }
+
+    @FXML void btnCustomer(ActionEvent e) {
+
+    }
+
+    @FXML void btnProduct(ActionEvent e) {
+
+    }
+
+    @FXML void btnReturn(ActionEvent e) {
+
+    }
+
+    @FXML void btnSupplier(ActionEvent e) {
+
+    }
+
+    @FXML void btnOrders(ActionEvent e) {
+
+    }
+
+    @FXML void btnSearch(ActionEvent e) {
+
+    }
 
 }
