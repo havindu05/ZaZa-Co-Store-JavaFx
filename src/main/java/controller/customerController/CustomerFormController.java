@@ -21,7 +21,6 @@ public class CustomerFormController {
     private final CustomerService customerService = new CustomerController();
 
     private double productPrice = 0.0;
-
     private Runnable onCustomerSaved;
 
     @FXML
@@ -41,20 +40,40 @@ public class CustomerFormController {
         calculateTotal();
     }
 
-    public void setQuantity(int qty) {
-        spnQty.getValueFactory().setValue(qty);
-    }
-
     public void setOnCustomerSaved(Runnable callback) {
         this.onCustomerSaved = callback;
     }
 
+    public String getTotalAmount() {
+        return txtTotal.getText();
+    }
+
+    public double getTotalAmountAsDouble() {
+        try {
+            return Double.parseDouble(txtTotal.getText());
+        } catch (Exception e) {
+            return 0.0;
+        }
+    }
+
+    public int getQuantity() {
+        return spnQty.getValue();
+    }
+
+    public String getCustomerPhone() {
+        return txtPhone.getText().trim();
+    }
+
+    public String getCustomerName() {
+        return txtName.getText().trim();
+    }
+
     private void calculateTotal() {
         try {
-            double price = txtPrice.getText().trim().isEmpty() ? 0.0 : Double.parseDouble(txtPrice.getText());
+            double price = txtPrice.getText().isEmpty() ? 0.0 : Double.parseDouble(txtPrice.getText());
             int qty = spnQty.getValue();
             txtTotal.setText(String.format("%.2f", price * qty));
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             txtTotal.setText("0.00");
         }
     }
@@ -63,37 +82,32 @@ public class CustomerFormController {
     void btnBuyNow() {
         String phone = txtPhone.getText().trim();
 
-        if (phone.isEmpty()) {
-            showAlert(Alert.AlertType.WARNING, "Please enter phone number!");
+        if (phone.isEmpty() || phone.length() != 10 || !phone.matches("\\d{10}")) {
+            showAlert(Alert.AlertType.WARNING, "Please enter a valid 10-digit phone number!");
             return;
-        }
-
-        if (!phone.matches("\\d{10}")) {
-            showAlert(Alert.AlertType.WARNING, "Phone must be 10 digits!");
-            return;
-        }
-
-        CustomerDTO existingCustomer = customerService.searchCustomer(phone);
-        if (existingCustomer != null) {
-            showAlert(Alert.AlertType.INFORMATION, "Customer already exists!\nYou can now place the order.");
         }
 
         if (cmbTitle.getValue() == null || txtName.getText().trim().isEmpty()) {
-            showAlert(Alert.AlertType.WARNING, "Please fill Title and Name!");
+            showAlert(Alert.AlertType.WARNING, "Please select Title and enter Name!");
             return;
         }
 
-        CustomerDTO newCustomer = new CustomerDTO(
+        CustomerDTO existing = customerService.searchCustomer(phone);
+        if (existing != null) {
+            showAlert(Alert.AlertType.INFORMATION, "Customer already exists! Proceeding to order...");
+        }
+
+        CustomerDTO customer = new CustomerDTO(
                 phone,
                 cmbTitle.getValue(),
                 txtName.getText().trim(),
                 txtAddress.getText().trim()
         );
 
-        boolean saved = customerService.saveCustomer(newCustomer);
+        boolean saved = customerService.saveCustomer(customer);
 
-        if (saved || existingCustomer != null) {
-            showAlert(Alert.AlertType.INFORMATION, "Customer ready! Proceeding to order...");
+        if (saved || existing != null) {
+            showAlert(Alert.AlertType.INFORMATION, "Customer ready! Order confirmed.");
 
             if (onCustomerSaved != null) {
                 onCustomerSaved.run();
@@ -112,15 +126,5 @@ public class CustomerFormController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
-
-    private void clearFields() {
-        txtPhone.clear();
-        txtName.clear();
-        txtAddress.clear();
-        txtPrice.clear();
-        txtTotal.clear();
-        cmbTitle.setValue(null);
-        spnQty.getValueFactory().setValue(1);
     }
 }
