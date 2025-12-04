@@ -19,4 +19,6 @@ public interface CartService {
 
     int getItemCount();
 
+    boolean saveToDatabase(String orderId);
+
 }
