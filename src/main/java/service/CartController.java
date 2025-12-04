@@ -8,6 +8,8 @@ import repository.CartRepositoryImpl;
 
 public class CartController implements CartService {
 
+    private static final CartController INSTANCE = new CartController();
+
     private final ObservableList<CartItem> cartItems = FXCollections.observableArrayList();
     private final CartRepository cartRepository = new CartRepositoryImpl();
 
@@ -61,5 +63,13 @@ public class CartController implements CartService {
     public boolean saveToDatabase(String orderId) {
         if (cartItems.isEmpty()) return false;
         return cartRepository.saveCart(cartItems, orderId);
+    }
+
+    public static CartController getInstance() {
+        return INSTANCE;
+    }
+
+    private CartController() {
+
     }
 }

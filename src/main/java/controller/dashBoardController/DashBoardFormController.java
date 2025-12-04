@@ -55,10 +55,7 @@ public class DashBoardFormController {
 
     }
 
-    @FXML
-    void btnReturn(ActionEvent event) {
 
-    }
 
     @FXML
     void btnSupplier(ActionEvent event) {
@@ -70,4 +67,11 @@ public class DashBoardFormController {
 
     }
 
+    public void btnMyCart(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CartPage.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
