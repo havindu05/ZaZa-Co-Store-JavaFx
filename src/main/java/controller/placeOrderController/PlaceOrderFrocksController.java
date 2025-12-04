@@ -10,10 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import service.CartController;
+
 import java.io.IOException;
 
 public class PlaceOrderFrocksController {
 
+    private final CartController cartService = CartController.getInstance();
 
     @FXML void BtnBlackButterflyFrock(ActionEvent event)   {
         buyNow("Black Butterfly Frock", 5500.00);

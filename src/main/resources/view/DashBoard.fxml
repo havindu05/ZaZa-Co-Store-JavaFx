@@ -6,6 +6,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.PieChart?>
 <AnchorPane prefHeight="768.0" prefWidth="1088.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashBoardController.DashBoardFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="753.0" layoutX="8.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="321.0" />
@@ -65,5 +69,30 @@
             <Font size="14.0" />
          </font>
       </Text>
+       <VBox layoutX="340.0" layoutY="20.0" spacing="20" prefWidth="740.0">
+           <Label text="WELCOME BACK!" style="-fx-text-fill: #f1c40f; -fx-font-size: 38; -fx-font-weight: bold;" />
+
+           <!-- Stats Row -->
+           <HBox spacing="20">
+               <VBox style="-fx-background-color: #2c3e50; -fx-background-radius: 20; -fx-padding: 20;">
+                   <Label text="Today's Sales" style="-fx-text-fill: #95a5a6;" />
+                   <Label fx:id="lblTodaySales" text="Rs. 0.00" style="-fx-text-fill: #2ecc71; -fx-font-size: 28; -fx-font-weight: bold;" />
+               </VBox>
+               <VBox style="-fx-background-color: #34495e; -fx-background-radius: 20; -fx-padding: 20;">
+                   <Label text="Total Orders" style="-fx-text-fill: #95a5a6;" />
+                   <Label fx:id="lblTotalOrders" text="0" style="-fx-text-fill: #3498db; -fx-font-size: 28; -fx-font-weight: bold;" />
+               </VBox>
+               <VBox style="-fx-background-color: #2c3e50; -fx-background-radius: 20; -fx-padding: 20;">
+                   <Label text="Active Customers" style="-fx-text-fill: #95a5a6;" />
+                   <Label fx:id="lblTotalCustomers" text="0" style="-fx-text-fill: #9b59b6; -fx-font-size: 28; -fx-font-weight: bold;" />
+               </VBox>
+           </HBox>
+
+           <!-- Cart Badge -->
+           <Label fx:id="lblCartItems" text="0 Items in Cart" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-padding: 12 25; -fx-background-radius: 30; -fx-font-size: 18; -fx-font-weight: bold;" />
+
+           <!-- Pie Chart -->
+           <PieChart fx:id="pieChart" prefHeight="380" prefWidth="700" />
+       </VBox>
    </children>
 </AnchorPane>
