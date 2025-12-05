@@ -1,12 +1,12 @@
 package repository;
 
-import model.dto.CartItem;
+import model.dto.CartItemDTO;
 
 import java.util.List;
 
 public interface CartRepository {
 
-    boolean saveCart(List<CartItem> items, String orderId);
+    boolean saveCart(List<CartItemDTO> items, String orderId);
 
-    List<CartItem> getCartByOrderId(String orderId);
+    List<CartItemDTO> getCartByOrderId(String orderId);
 }

@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import model.dto.CartItem;
+import model.dto.CartItemDTO;
 import service.CartController;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class DashBoardFormController {
     private void initialize() {
         updateCartCount();
 
-        cartService.getAllItems().addListener((ListChangeListener<CartItem>) c -> updateCartCount());
+        cartService.getAllItems().addListener((ListChangeListener<CartItemDTO>) c -> updateCartCount());
 
         lblTodaySales.setText("Rs. 485,900.00");
         lblTotalOrders.setText("89 Orders");
@@ -77,7 +77,7 @@ public class DashBoardFormController {
     }
 
     @FXML void btnEmployee(ActionEvent e) throws IOException    {
-        openPage(e, "/view/EmployeeForm.fxml");
+        openPage(e, "/view/Employee.fxml");
     }
 
     @FXML void btnSupplier(ActionEvent e) throws IOException    {

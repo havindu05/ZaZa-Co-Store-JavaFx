@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import static com.mysql.cj.conf.PropertyKey.PASSWORD;
+
 public class DBConnection {
 
     private static DBConnection instance;
@@ -20,7 +22,9 @@ public class DBConnection {
         return instance;
     }
 
+
     public Connection getConnection() {
+
         return connection;
     }
 }

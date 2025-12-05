@@ -2,7 +2,7 @@ package service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.dto.CartItem;
+import model.dto.CartItemDTO;
 import repository.CartRepository;
 import repository.CartRepositoryImpl;
 
@@ -10,13 +10,13 @@ public class CartController implements CartService {
 
     private static final CartController INSTANCE = new CartController();
 
-    private final ObservableList<CartItem> cartItems = FXCollections.observableArrayList();
+    private final ObservableList<CartItemDTO> cartItems = FXCollections.observableArrayList();
     private final CartRepository cartRepository = new CartRepositoryImpl();
 
     @Override
-    public void addItem(CartItem newItem) {
+    public void addItem(CartItemDTO newItem) {
 
-        for (CartItem item : cartItems) {
+        for (CartItemDTO item : cartItems) {
             if (item.getItemId().equals(newItem.getItemId())) {
                 item.setQty(item.getQty() + newItem.getQty());
                 return;
@@ -26,12 +26,12 @@ public class CartController implements CartService {
     }
 
     @Override
-    public void removeItem(CartItem item) {
+    public void removeItem(CartItemDTO item) {
         cartItems.remove(item);
     }
 
     @Override
-    public void updateItemQuantity(CartItem item, int newQty) {
+    public void updateItemQuantity(CartItemDTO item, int newQty) {
         if (newQty <= 0) {
             removeItem(item);
         } else {
@@ -45,18 +45,18 @@ public class CartController implements CartService {
     }
 
     @Override
-    public ObservableList<CartItem> getAllItems() {
+    public ObservableList<CartItemDTO> getAllItems() {
         return FXCollections.unmodifiableObservableList(cartItems);
     }
 
     @Override
     public double getTotalAmount() {
-        return cartItems.stream().mapToDouble(CartItem::getTotal).sum();
+        return cartItems.stream().mapToDouble(CartItemDTO::getTotal).sum();
     }
 
     @Override
     public int getItemCount() {
-        return cartItems.stream().mapToInt(CartItem::getQty).sum();
+        return cartItems.stream().mapToInt(CartItemDTO::getQty).sum();
     }
 
     @Override

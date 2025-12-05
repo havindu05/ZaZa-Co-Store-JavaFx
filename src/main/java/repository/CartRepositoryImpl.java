@@ -1,7 +1,7 @@
 package repository;
 
 import db.DBConnection;
-import model.dto.CartItem;
+import model.dto.CartItemDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class CartRepositoryImpl implements CartRepository {
             "INSERT INTO order_detail (order_id, item_id, qty, unit_price, line_total) VALUES (?, ?, ?, ?, ?)";
 
     @Override
-    public boolean saveCart(List<CartItem> items, String orderId) {
+    public boolean saveCart(List<CartItemDTO> items, String orderId) {
         if (items == null || items.isEmpty()) return false;
 
         try (Connection con = DBConnection.getInstance().getConnection();
@@ -22,7 +22,7 @@ public class CartRepositoryImpl implements CartRepository {
 
             con.setAutoCommit(false);
 
-            for (CartItem item : items) {
+            for (CartItemDTO item : items) {
                 preparedStatement.setString(1, orderId);
                 preparedStatement.setString(2, item.getItemId());
                 preparedStatement.setInt(3, item.getQty());
@@ -48,7 +48,7 @@ public class CartRepositoryImpl implements CartRepository {
     }
 
     @Override
-    public List<CartItem> getCartByOrderId(String orderId) {
+    public List<CartItemDTO> getCartByOrderId(String orderId) {
         return null;
     }
 }

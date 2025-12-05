@@ -1,19 +1,19 @@
 package service;
 
 import javafx.collections.ObservableList;
-import model.dto.CartItem;
+import model.dto.CartItemDTO;
 
 public interface CartService {
 
-    void addItem(CartItem item);
+    void addItem(CartItemDTO item);
 
-    void removeItem(CartItem item);
+    void removeItem(CartItemDTO item);
 
-    void updateItemQuantity(CartItem item, int newQty);
+    void updateItemQuantity(CartItemDTO item, int newQty);
 
     void clearCart();
 
-    ObservableList<CartItem> getAllItems();
+    ObservableList<CartItemDTO> getAllItems();
 
     double getTotalAmount();
 
