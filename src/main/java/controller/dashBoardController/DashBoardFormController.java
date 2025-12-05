@@ -27,7 +27,8 @@ public class DashBoardFormController {
     @FXML
     private void initialize() {
         updateCartCount();
-        cartService.getAllItems().addListener((ListChangeListener<? super CartItem>) (observable) -> updateCartCount());
+
+        cartService.getAllItems().addListener((ListChangeListener<CartItem>) c -> updateCartCount());
 
         lblTodaySales.setText("Rs. 485,900.00");
         lblTotalOrders.setText("89 Orders");
