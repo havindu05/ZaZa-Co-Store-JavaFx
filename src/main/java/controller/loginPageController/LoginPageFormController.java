@@ -21,22 +21,21 @@ public class LoginPageFormController {
     @FXML
     private TextField txtPassword;
 
-    @FXML
-    void btnBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SecurityPage.fxml"));
-        Scene scene = new Scene(loader.load());
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+    private void openPage(ActionEvent e, String fxmlPath) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxmlPath))));
+        stage.centerOnScreen();
         stage.show();
     }
 
     @FXML
+    void btnBack(ActionEvent event) throws IOException {
+        openPage(event, "/view/SecurityPage.fxml");
+    }
+
+    @FXML
     void btnLogin(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashBoard.fxml"));
-        Scene scene = new Scene(loader.load());
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        openPage(event, "/view/DashBoard.fxml");
     }
 
 }

@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.dto.CustomerDTO;
 import service.CustomerService;
-import service.CustomerController; // or CustomerServiceImpl
+import service.CustomerController;
 
 public class CustomerFormController {
 

@@ -1,106 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cartController.CartFormController">
-   <children>
-      <AnchorPane layoutX="-2.0" layoutY="-2.0" prefHeight="768.0" prefWidth="1088.0" style="-fx-background-color: BLACK;">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="753.0" layoutX="8.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="321.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="746.0" layoutX="11.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" width="316.0" />
-            <Text fill="WHITE" layoutX="12.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZaZa Co." textAlignment="CENTER" wrappingWidth="289.39564514160156">
-               <font>
-                  <Font name="Malayalam MN" size="56.0" />
-               </font>
-            </Text>
-            <Button layoutX="30.0" layoutY="113.0" mnemonicParsing="false" onAction="#btnDashBoard" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Dash Board" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="30.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnPlaceOrder" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Place Order" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="30.0" layoutY="248.0" mnemonicParsing="false" onAction="#btnEmployee" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Employee" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="33.0" layoutY="314.0" mnemonicParsing="false" onAction="#btnCustomer" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Customer" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="34.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnProduct" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Product" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="34.0" layoutY="448.0" mnemonicParsing="false" onAction="#btnMyCart" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="My cart" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="34.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Supplier" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="35.0" layoutY="578.0" mnemonicParsing="false" onAction="#btnOrders" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Orders" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="34.0" layoutY="647.0" mnemonicParsing="false" onAction="#btnLogOut" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="LogOut" textFill="WHITE">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-            <Text fill="WHITE" layoutX="78.0" layoutY="732.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-opacity: 50%;" text="Your Style, Your Rules" textAlignment="CENTER" wrappingWidth="157.62071228027344">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="550.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Cart" textAlignment="CENTER" wrappingWidth="289.39564514160156">
-               <font>
-                  <Font name="Malayalam MN" size="37.0" />
-               </font>
-            </Text>
-            <TableView fx:id="tblMyCart" layoutX="356.0" layoutY="80.0" prefHeight="458.0" prefWidth="710.0" style="-fx-background-color: #393636; -fx-background-radius: 20;">
-              <columns>
-                <TableColumn fx:id="colItemCode" prefWidth="103.0" text="Item Code" />
-                <TableColumn fx:id="colItem" prefWidth="207.0" text="Item" />
-                  <TableColumn fx:id="colPrice" prefWidth="134.0" text="Price" />
-                  <TableColumn fx:id="colQty" prefWidth="103.0" text="Quantity" />
-                  <TableColumn fx:id="colTotal" prefWidth="160.0" text="Total" />
+<AnchorPane prefHeight="768.0" prefWidth="1088.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cartController.CartFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="753.0" layoutX="8.0" layoutY="5.0" width="321.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="746.0" layoutX="11.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" width="316.0" />
 
-              </columns>
+        <Text fill="WHITE" layoutX="12.0" layoutY="70.0" text="ZaZa Co." textAlignment="CENTER" wrappingWidth="289.4">
+            <font><Font name="Malayalam MN" size="56.0" /></font>
+        </Text>
+
+        <Button layoutX="30.0" layoutY="113.0" onAction="#btnDashBoard" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Dash Board" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="30.0" layoutY="180.0" onAction="#btnPlaceOrder" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Place Order" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="30.0" layoutY="248.0" onAction="#btnEmployee" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Employee" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="33.0" layoutY="314.0" onAction="#btnCustomer" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Customer" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="34.0" layoutY="382.0" onAction="#btnProduct" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Product" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="34.0" layoutY="448.0" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: BLACK; -fx-border-color: WHITE; -fx-border-radius: 50;" text="My Cart" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="34.0" layoutY="513.0" onAction="#btnSupplier" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Supplier" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="35.0" layoutY="578.0" onAction="#btnOrders" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Orders" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+        <Button layoutX="34.0" layoutY="647.0" onAction="#btnLogOut" prefHeight="45.0" prefWidth="268.0" style="-fx-background-radius: 50; -fx-background-color: Black; -fx-border-color: WHITE; -fx-border-radius: 50;" text="LogOut" textFill="WHITE">
+            <font><Font name="Canela Text Regular" size="18.0" /></font>
+        </Button>
+
+        <Text fill="WHITE" layoutX="78.0" layoutY="732.0" style="-fx-opacity: 50%;" text="Your Style, Your Rules">
+            <font><Font size="14.0" /></font>
+        </Text>
+
+        <VBox layoutX="331.0" layoutY="80.0" prefHeight="680.0" prefWidth="749.0" spacing="30">
+            <padding><Insets bottom="40" left="40" right="40" top="40" /></padding>
+
+            <TableView fx:id="tblMyCart" prefHeight="460" prefWidth="710" style="-fx-background-color: #393636; -fx-background-radius: 20; -fx-border-radius: 20;">
+                <columns>
+                    <TableColumn fx:id="colItemCode" prefWidth="100" text="Code" />
+                    <TableColumn fx:id="colItem" prefWidth="250" text="Item" />
+                    <TableColumn fx:id="colPrice" prefWidth="120" text="Price" />
+                    <TableColumn fx:id="colQty" prefWidth="100" text="Qty" />
+                    <TableColumn fx:id="colTotal" prefWidth="140" text="Total" />
+                    <TableColumn prefWidth="200" text="" /> <!-- Action Column -->
+                </columns>
             </TableView>
-            <Text fill="WHITE" layoutX="590.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grand Total :">
-               <font>
-                  <Font size="39.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtPrice" alignment="CENTER_RIGHT" layoutX="810.0" layoutY="554.0" prefHeight="48.0" prefWidth="268.0" promptText="0.00" style="-fx-background-color: BLACK; -fx-border-color: WHITE; -fx-border-radius: 50; -fx-background-radius: 50;">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </TextField>
-            <Button layoutX="367.0" layoutY="658.0" mnemonicParsing="false" onAction="#btnCheckOut" prefHeight="50.0" prefWidth="699.0" style="-fx-background-radius: 50; -fx-background-color: #2fc336; -fx-border-color: WHITE; -fx-border-radius: 50;" text="Check Out">
-               <font>
-                  <Font name="Canela Text Regular" size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Text fill="WHITE" style="-fx-font-size: 38px; -fx-font-weight: bold;" text="Grand Total :" />
+                <TextField fx:id="txtGrandPrice" editable="false" prefHeight="60" prefWidth="300" promptText="0.00" style="-fx-background-color: BLACK; -fx-border-color: WHITE; -fx-border-radius: 50; -fx-background-radius: 50; -fx-text-fill: #f1c40f; -fx-font-size: 36px; -fx-font-weight: bold; -fx-alignment: CENTER_RIGHT;" />
+            </HBox>
+
+            <Button onAction="#btnCheckOut" prefHeight="70" prefWidth="700" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold; -fx-background-radius: 50; -fx-effect: dropshadow(gaussian, #1a1a1a, 10, 0.5, 0, 5);" text="CHECK OUT" />
+        </VBox>
+      <Text fill="WHITE" layoutX="534.0" layoutY="53.0" text="My Cart" textAlignment="CENTER" wrappingWidth="289.4">
+         <font>
+            <Font name="Malayalam MN" size="39.0" />
+         </font>
+      </Text>
+    </children>
 </AnchorPane>

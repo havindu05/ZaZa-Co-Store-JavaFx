@@ -55,6 +55,13 @@ public class DashBoardFormController {
         }
     }
 
+    private void openPage(ActionEvent e, String fxmlPath) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxmlPath))));
+        stage.centerOnScreen();
+        stage.show();
+    }
+
 
     @FXML void btnDashBoard(ActionEvent e) throws IOException    {
         openPage(e, "/view/DashBoard.fxml");
@@ -88,20 +95,9 @@ public class DashBoardFormController {
         openPage(e, "/view/OrderHistory.fxml");
     }
 
-
     @FXML
     void btnLogOut(ActionEvent e) throws IOException {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SecurityPage.fxml"))));
-        stage.setTitle("ZaZa Co. - Login");
-        stage.centerOnScreen();
-        stage.show();
+        openPage(e, "/view/SecurityPage.fxml");
     }
 
-    private void openPage(ActionEvent e, String fxmlPath) throws IOException {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxmlPath))));
-        stage.centerOnScreen();
-        stage.show();
-    }
 }

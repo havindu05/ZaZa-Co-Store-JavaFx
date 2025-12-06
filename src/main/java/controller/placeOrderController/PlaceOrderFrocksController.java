@@ -8,43 +8,56 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.dto.CartItemDTO;
 import service.CartController;
 
 import java.io.IOException;
 
 public class PlaceOrderFrocksController {
 
+    @FXML private TextField txtQty;
+
     private final CartController cartService = CartController.getInstance();
 
-    @FXML void BtnBlackButterflyFrock(ActionEvent event)   {
-        buyNow("Black Butterfly Frock", 5500.00);
-    }
+    private String currentItemName = "";
+    private double currentItemPrice = 0;
 
-    @FXML void btnRoyalBlossomFrock(ActionEvent event)     {
-        buyNow("Royal Blossom Frock", 4500.00);
-    }
+    @FXML
+    void btnAddToCart(ActionEvent event) {
+        int qty = 1;
+        try {
+            if (txtQty != null && !txtQty.getText().trim().isEmpty()) {
+                qty = Integer.parseInt(txtQty.getText().trim());
+                if (qty <= 0) throw new Exception();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.WARNING, "Please enter a valid quantity!").show();
+            return;
+        }
 
-    @FXML void btnCrystalLaceElegance(ActionEvent event)   {
-        buyNow("Crystal Lace Elegance", 5200.00);
-    }
+        if (currentItemName.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please select an item first!").show();
+            return;
+        }
 
-    @FXML void btnPinkCandyFrock(ActionEvent event)        {
-        buyNow("Pink Candy Frock", 6500.00);
-    }
+        CartItemDTO item = new CartItemDTO(
+                "I" + System.nanoTime(),
+                currentItemName,
+                currentItemPrice,
+                qty
+        );
 
-    @FXML void btnSweetLavenderFrock(ActionEvent event)    {
-        buyNow("Sweet Lavender Frock", 6000.00);
-    }
+        cartService.addItem(item);
 
-    @FXML void btnTinyAngelDress(ActionEvent event) {
-        buyNow("Tiny Angel Dress", 5800.00);
-    }
+        new Alert(Alert.AlertType.INFORMATION,
+                currentItemName + " × " + qty + " added to cart!\n" +
+                        "Cart Total: Rs. " + String.format("%,.2f", cartService.getTotalAmount())
+        ).show();
 
-
-    @FXML void btnAddToCart(ActionEvent event) {
-        new Alert(Alert.AlertType.INFORMATION, "Item added to cart!").show();
+        if (txtQty != null) txtQty.clear();
     }
 
     private void buyNow(String itemName, double price) {
@@ -56,25 +69,33 @@ public class PlaceOrderFrocksController {
             controller.setProductPrice(price);
 
             controller.setOnCustomerSaved(() -> {
-                String name = controller.getCustomerName();
+                String customerName = controller.getCustomerName();
                 int qty = controller.getQuantity();
                 double total = qty * price;
 
+                CartItemDTO item = new CartItemDTO(
+                        "I" + System.nanoTime(),
+                        itemName,
+                        price,
+                        qty
+                );
+                cartService.addItem(item);
+
                 new Alert(Alert.AlertType.INFORMATION) {{
                     setTitle("Order Confirmed!");
-                    setHeaderText("Thank You " + name + "!");
+                    setHeaderText("Thank You " + customerName + "!");
                     setContentText(
                             "Item: " + itemName + "\n" +
                                     "Quantity: " + qty + "\n" +
                                     "Total: Rs. " + String.format("%,.2f", total) + "\n\n" +
-                                    "Come again soon!"
+                                    "Come again soon! ♡"
                     );
                 }}.showAndWait();
             });
 
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Buy - " + itemName);
+            stage.setTitle("Buy Now - " + itemName);
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.showAndWait();
@@ -85,76 +106,104 @@ public class PlaceOrderFrocksController {
         }
     }
 
-    private void loadScene(ActionEvent event, String path) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    @FXML void BtnBlackButterflyFrock(ActionEvent e)     {
+        selectItem("Black Butterfly Frock", 5500.00);
+        buyNow("Black Butterfly Frock", 5500.00);
+    }
+
+    @FXML void btnRoyalBlossomFrock(ActionEvent e)       {
+        selectItem("Royal Blossom Frock", 4500.00);
+        buyNow("Royal Blossom Frock", 4500.00);
+    }
+
+    @FXML void btnCrystalLaceElegance(ActionEvent e)     {
+        selectItem("Crystal Lace Elegance", 5200.00);
+        buyNow("Crystal Lace Elegance", 5200.00);
+    }
+
+    @FXML void btnPinkCandyFrock(ActionEvent e)          {
+        selectItem("Pink Candy Frock", 6500.00);
+        buyNow("Pink Candy Frock", 6500.00);
+    }
+
+    @FXML void btnSweetLavenderFrock(ActionEvent e)      {
+        selectItem("Sweet Lavender Frock", 6000.00);
+        buyNow("Sweet Lavender Frock", 6000.00);
+    }
+
+    @FXML void btnTinyAngelDress(ActionEvent e)          {
+        selectItem("Tiny Angel Dress", 5800.00);
+        buyNow("Tiny Angel Dress", 5800.00);
+    }
+
+
+    private void selectItem(String name, double price) {
+        currentItemName = name;
+        currentItemPrice = price;
+    }
+
+    private void loadScene(ActionEvent e, String path) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(path))));
         stage.centerOnScreen();
         stage.show();
     }
 
-    @FXML void btnDashBoard(ActionEvent e) throws IOException {
+    @FXML void btnMyCart(ActionEvent e) throws IOException    {
+        loadScene(e, "/view/CartPage.fxml");
+    }
+
+    @FXML void btnDashBoard(ActionEvent e) throws IOException    {
         loadScene(e, "/view/DashBoard.fxml");
     }
 
-    @FXML void btnPlaceOrder(ActionEvent e) throws IOException {
+    @FXML void btnPlaceOrder(ActionEvent e) throws IOException   {
         loadScene(e, "/view/PlaceOrderFrocks.fxml");
     }
 
-    @FXML void btnLogOut(ActionEvent e) throws IOException {
+    @FXML void btnLogOut(ActionEvent e) throws IOException       {
         loadScene(e, "/view/SecurityPage.fxml");
     }
 
-    @FXML void btnTops(ActionEvent e) throws IOException {
+    @FXML void btnTops(ActionEvent e) throws IOException         {
         loadScene(e, "/view/PlaceOrderTops.fxml");
     }
 
-    @FXML void btnSkirts(ActionEvent e) throws IOException {
+    @FXML void btnSkirts(ActionEvent e) throws IOException       {
         loadScene(e, "/view/PlaceOrderSkirts.fxml");
     }
 
-    @FXML void btnPants(ActionEvent e) throws IOException {
+    @FXML void btnPants(ActionEvent e) throws IOException        {
         loadScene(e, "/view/PlaceOrderPants.fxml");
     }
 
-    @FXML void btnTshirts(ActionEvent e) throws IOException {
+    @FXML void btnTshirts(ActionEvent e) throws IOException      {
         loadScene(e, "/view/PlaceOrderTshirts.fxml");
     }
 
-
-
-    @FXML void btnEmployee(ActionEvent e) {
-
+    @FXML void btnEmployee(ActionEvent e) throws IOException     {
+        loadScene(e, "/view/EmployeeForm.fxml");
     }
 
-    @FXML void btnCustomer(ActionEvent e) {
-
+    @FXML void btnCustomer(ActionEvent e) throws IOException     {
+        loadScene(e, "/view/CustomerForm.fxml");
     }
 
-    @FXML void btnProduct(ActionEvent e) {
-
+    @FXML void btnProduct(ActionEvent e) throws IOException      {
+        loadScene(e, "/view/ProductForm.fxml");
     }
 
-    @FXML void btnSupplier(ActionEvent e) {
-
+    @FXML void btnSupplier(ActionEvent e) throws IOException     {
+        loadScene(e, "/view/SupplierForm.fxml");
     }
 
-    @FXML void btnOrders(ActionEvent e) {
-
+    @FXML void btnOrders(ActionEvent e) throws IOException      {
+        loadScene(e, "/view/OrderHistory.fxml");
     }
 
-    @FXML void btnFrocks(ActionEvent e) {
-
+    public void btnSearch(ActionEvent event) {
     }
 
-    @FXML void btnSearch(ActionEvent e) {
-
-    }
-
-    public void btnMyCart(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CartPage.fxml"));
-        Scene scene = new Scene(loader.load());
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+    public void btnFrocks(ActionEvent event) {
     }
 }

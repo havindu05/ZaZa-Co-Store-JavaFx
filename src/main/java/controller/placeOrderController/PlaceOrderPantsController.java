@@ -121,28 +121,28 @@ public class PlaceOrderPantsController {
         loadScene(e, "/view/PlaceOrderTshirts.fxml");
     }
 
-    @FXML void btnEmployee(ActionEvent e) {
+    @FXML void btnEmployee(ActionEvent e) throws IOException {
+        loadScene(e, "/view/Employee.fxml");
+    }
+
+    @FXML void btnCustomer(ActionEvent e) throws IOException {
+        loadScene(e, "/view/Customer.fxml");
+    }
+
+    @FXML void btnProduct(ActionEvent e) throws IOException {
+        loadScene(e, "/view/Product.fxml");
+    }
+
+    @FXML void btnReturn(ActionEvent e) throws IOException {
 
     }
 
-    @FXML void btnCustomer(ActionEvent e) {
-
+    @FXML void btnSupplier(ActionEvent e) throws IOException {
+        loadScene(e, "/view/Supplier.fxml");
     }
 
-    @FXML void btnProduct(ActionEvent e) {
-
-    }
-
-    @FXML void btnReturn(ActionEvent e) {
-
-    }
-
-    @FXML void btnSupplier(ActionEvent e) {
-
-    }
-
-    @FXML void btnOrders(ActionEvent e) {
-
+    @FXML void btnOrders(ActionEvent e) throws IOException {
+        loadScene(e, "/view/Orders.fxml");
     }
 
     @FXML void btnSearch(ActionEvent e) {

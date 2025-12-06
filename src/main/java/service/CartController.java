@@ -13,12 +13,18 @@ public class CartController implements CartService {
     private final ObservableList<CartItemDTO> cartItems = FXCollections.observableArrayList();
     private final CartRepository cartRepository = new CartRepositoryImpl();
 
+    private CartController() {}
+
+    public static CartController getInstance() {
+        return INSTANCE;
+    }
+
     @Override
     public void addItem(CartItemDTO newItem) {
-
         for (CartItemDTO item : cartItems) {
             if (item.getItemId().equals(newItem.getItemId())) {
                 item.setQty(item.getQty() + newItem.getQty());
+                item.setTotal(item.getPrice() * item.getQty());
                 return;
             }
         }
@@ -36,6 +42,7 @@ public class CartController implements CartService {
             removeItem(item);
         } else {
             item.setQty(newQty);
+            item.setTotal(item.getPrice() * newQty);
         }
     }
 
@@ -61,15 +68,6 @@ public class CartController implements CartService {
 
     @Override
     public boolean saveToDatabase(String orderId) {
-        if (cartItems.isEmpty()) return false;
         return cartRepository.saveCart(cartItems, orderId);
-    }
-
-    public static CartController getInstance() {
-        return INSTANCE;
-    }
-
-    private CartController() {
-
     }
 }

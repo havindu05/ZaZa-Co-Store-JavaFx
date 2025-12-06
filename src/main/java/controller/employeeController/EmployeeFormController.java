@@ -108,7 +108,7 @@ public class EmployeeFormController {
     }
 
     @FXML void btnCustomer(ActionEvent e) throws IOException     {
-        goTo(e, "/view/CustomerForm.fxml");
+        goTo(e, "/view/Customer.fxml");
     }
 
     @FXML void btnProduct(ActionEvent e) throws IOException      {
