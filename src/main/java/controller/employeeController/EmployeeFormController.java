@@ -24,14 +24,12 @@ public class EmployeeFormController {
 
     private final EmployeeController employeeService = new EmployeeController();
 
-    // ADD මේ ObservableList එක!
     private final ObservableList<EmployeeDTO> employeeList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() {
         loadAllEmployees();
 
-        // Real-time update – employee list එක change වුණාම auto refresh!
         employeeList.addListener((javafx.collections.ListChangeListener<EmployeeDTO>) c -> {
             loadAllEmployees();
         });
@@ -48,7 +46,6 @@ public class EmployeeFormController {
             return;
         }
 
-        // ObservableList එක update කරනවා
         employeeList.setAll(employees);
 
         for (EmployeeDTO e : employees) {
@@ -101,7 +98,6 @@ public class EmployeeFormController {
         deleteBtn.setOnAction(event -> {
             boolean deleted = employeeService.deleteEmployee(e.getId());
             if (deleted) {
-                // ObservableList එකෙන් remove කරනවා → auto refresh!
                 employeeList.remove(e);
                 new Alert(Alert.AlertType.INFORMATION, "Employee deleted!").show();
             } else {
@@ -113,7 +109,7 @@ public class EmployeeFormController {
         return card;
     }
 
-    // NAVIGATION
+
     private void goTo(ActionEvent e, String fxml) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxml))));
@@ -121,14 +117,37 @@ public class EmployeeFormController {
         stage.show();
     }
 
-    @FXML void btnDashBoard(ActionEvent e) throws IOException     { goTo(e, "/view/DashBoard.fxml"); }
-    @FXML void btnPlaceOrder(ActionEvent e) throws IOException   { goTo(e, "/view/PlaceOrderFrocks.fxml"); }
-    @FXML void btnMyCart(ActionEvent e) throws IOException        { goTo(e, "/view/CartPage.fxml"); }
-    @FXML void btnCustomer(ActionEvent e) throws IOException     { goTo(e, "/view/CustomerForm.fxml"); }
-    @FXML void btnProduct(ActionEvent e) throws IOException      { goTo(e, "/view/ProductForm.fxml"); }
-    @FXML void btnEmployee(ActionEvent e) throws IOException     { } // Already here
-    @FXML void btnSupplier(ActionEvent e) throws IOException     { goTo(e, "/view/SupplierForm.fxml"); }
-    @FXML void btnOrders(ActionEvent e) throws IOException       { goTo(e, "/view/OrderHistory.fxml"); }
+    @FXML void btnDashBoard(ActionEvent e) throws IOException     {
+        goTo(e, "/view/DashBoard.fxml");
+    }
+
+    @FXML void btnPlaceOrder(ActionEvent e) throws IOException   {
+        goTo(e, "/view/PlaceOrderFrocks.fxml");
+    }
+
+    @FXML void btnMyCart(ActionEvent e) throws IOException        {
+        goTo(e, "/view/CartPage.fxml");
+    }
+
+    @FXML void btnCustomer(ActionEvent e) throws IOException     {
+        goTo(e, "/view/CustomerForm.fxml");
+    }
+
+    @FXML void btnProduct(ActionEvent e) throws IOException      {
+        goTo(e, "/view/ProductForm.fxml");
+    }
+
+    @FXML void btnEmployee(ActionEvent e) throws IOException     {
+
+    }
+
+    @FXML void btnSupplier(ActionEvent e) throws IOException     {
+        goTo(e, "/view/SupplierForm.fxml");
+    }
+
+    @FXML void btnOrders(ActionEvent e) throws IOException       {
+        goTo(e, "/view/OrderHistory.fxml");
+    }
 
     @FXML void btnLogOut(ActionEvent e) throws IOException {
         goTo(e, "/view/SecurityPage.fxml");

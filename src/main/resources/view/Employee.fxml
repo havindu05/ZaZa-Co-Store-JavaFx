@@ -60,7 +60,6 @@
 
             <ScrollPane fitToWidth="true" prefHeight="648.0" prefWidth="672.0" style="-fx-background: transparent; -fx-background-color: transparent;">
                 <VBox fx:id="employeeContainer" alignment="TOP_CENTER" prefWidth="700" spacing="25" style="-fx-padding: 10;">
-                    <!-- Database එකෙන් dynamically load වෙන cards මෙතනට එනවා -->
                 </VBox>
             </ScrollPane>
         </VBox>
