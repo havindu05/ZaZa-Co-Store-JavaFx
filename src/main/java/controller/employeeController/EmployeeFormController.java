@@ -1,5 +1,7 @@
 package controller.employeeController;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +24,17 @@ public class EmployeeFormController {
 
     private final EmployeeController employeeService = new EmployeeController();
 
+    // ADD මේ ObservableList එක!
+    private final ObservableList<EmployeeDTO> employeeList = FXCollections.observableArrayList();
+
     @FXML
     private void initialize() {
         loadAllEmployees();
+
+        // Real-time update – employee list එක change වුණාම auto refresh!
+        employeeList.addListener((javafx.collections.ListChangeListener<EmployeeDTO>) c -> {
+            loadAllEmployees();
+        });
     }
 
     private void loadAllEmployees() {
@@ -38,6 +48,9 @@ public class EmployeeFormController {
             return;
         }
 
+        // ObservableList එක update කරනවා
+        employeeList.setAll(employees);
+
         for (EmployeeDTO e : employees) {
             VBox card = makeCard(e);
             employeeContainer.getChildren().add(card);
@@ -48,20 +61,20 @@ public class EmployeeFormController {
         VBox card = new VBox(15);
 
         card.setStyle("""
-        -fx-background-color: Blacl;
-        -fx-background-radius: 20;
-        -fx-border-color: white;
-        -fx-border-width: 1;
-        -fx-border-radius: 20;
-        -fx-padding: 25;
-        -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.2), 10, 0.3, 0, 0);
-        """);
+            -fx-background-color: #1a1a1a;
+            -fx-background-radius: 20;
+            -fx-border-color: white;
+            -fx-border-width: 2;
+            -fx-border-radius: 20;
+            -fx-padding: 25;
+            -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.2), 10, 0.3, 0, 0);
+            """);
 
         card.setPrefWidth(300);
         card.setAlignment(Pos.CENTER);
 
         Label name = new Label(e.getName());
-        name.setStyle("-fx-text-fill: WHITE; -fx-font-size: 24px; -fx-font-weight: bold;");
+        name.setStyle("-fx-text-fill: #f1c40f; -fx-font-size: 24px; -fx-font-weight: bold;");
 
         Label role = new Label(e.getRole());
         role.setStyle("-fx-text-fill: #3498db; -fx-font-size: 18px;");
@@ -78,64 +91,46 @@ public class EmployeeFormController {
 
         Button deleteBtn = new Button("Delete");
         deleteBtn.setStyle("""
-        -fx-background-color: #e74c3c;
-        -fx-text-fill: white;
-        -fx-font-weight: bold;
-        -fx-background-radius: 25;
-        -fx-padding: 10 25;
-        -fx-effect: dropshadow(gaussian, #c0392b, 5, 0.5, 0, 2);
-        """);
+            -fx-background-color: #e74c3c;
+            -fx-text-fill: white;
+            -fx-font-weight: bold;
+            -fx-background-radius: 25;
+            -fx-padding: 10 25;
+            """);
 
         deleteBtn.setOnAction(event -> {
-            employeeService.deleteEmployee(e.getId());
-            loadAllEmployees();
+            boolean deleted = employeeService.deleteEmployee(e.getId());
+            if (deleted) {
+                // ObservableList එකෙන් remove කරනවා → auto refresh!
+                employeeList.remove(e);
+                new Alert(Alert.AlertType.INFORMATION, "Employee deleted!").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Delete failed!").show();
+            }
         });
 
         card.getChildren().addAll(name, role, phone, status, deleteBtn);
         return card;
     }
 
-    @FXML void btnDashBoard(ActionEvent e) throws IOException     {
-        goTo(e, "/view/DashBoard.fxml");
-    }
-
-    @FXML void btnPlaceOrder(ActionEvent e) throws IOException   {
-        goTo(e, "/view/PlaceOrderFrocks.fxml");
-    }
-
-    @FXML void btnMyCart(ActionEvent e) throws IOException        {
-        goTo(e, "/view/CartPage.fxml");
-    }
-
-    @FXML void btnCustomer(ActionEvent e) throws IOException     {
-        goTo(e, "/view/Customer.fxml");
-    }
-
-    @FXML void btnProduct(ActionEvent e) throws IOException      {
-        goTo(e, "/view/ProductForm.fxml");
-    }
-
-    @FXML void btnEmployee(ActionEvent e) throws IOException     {
-        goTo(e, "/view/Employee.fxml");
-    }
-
-    @FXML void btnSupplier(ActionEvent e) throws IOException     {
-        goTo(e, "/view/SupplierForm.fxml");
-    }
-
-    @FXML void btnOrders(ActionEvent e) throws IOException       {
-        goTo(e, "/view/OrderHistory.fxml");
-    }
-
-
-    @FXML void btnLogOut(ActionEvent e) throws IOException {
-        goTo(e, "/view/SecurityPage.fxml");
-    }
-
+    // NAVIGATION
     private void goTo(ActionEvent e, String fxml) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(fxml))));
         stage.centerOnScreen();
         stage.show();
+    }
+
+    @FXML void btnDashBoard(ActionEvent e) throws IOException     { goTo(e, "/view/DashBoard.fxml"); }
+    @FXML void btnPlaceOrder(ActionEvent e) throws IOException   { goTo(e, "/view/PlaceOrderFrocks.fxml"); }
+    @FXML void btnMyCart(ActionEvent e) throws IOException        { goTo(e, "/view/CartPage.fxml"); }
+    @FXML void btnCustomer(ActionEvent e) throws IOException     { goTo(e, "/view/CustomerForm.fxml"); }
+    @FXML void btnProduct(ActionEvent e) throws IOException      { goTo(e, "/view/ProductForm.fxml"); }
+    @FXML void btnEmployee(ActionEvent e) throws IOException     { } // Already here
+    @FXML void btnSupplier(ActionEvent e) throws IOException     { goTo(e, "/view/SupplierForm.fxml"); }
+    @FXML void btnOrders(ActionEvent e) throws IOException       { goTo(e, "/view/OrderHistory.fxml"); }
+
+    @FXML void btnLogOut(ActionEvent e) throws IOException {
+        goTo(e, "/view/SecurityPage.fxml");
     }
 }

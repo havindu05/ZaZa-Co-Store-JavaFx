@@ -126,7 +126,7 @@ public class CartFormController {
     }
 
     @FXML void btnEmployee(ActionEvent e) throws IOException {
-        goTo(e, "/view/EmployeeForm.fxml");
+        goTo(e, "/view/Employee.fxml");
     }
 
     @FXML void btnCustomer(ActionEvent e) throws IOException {
